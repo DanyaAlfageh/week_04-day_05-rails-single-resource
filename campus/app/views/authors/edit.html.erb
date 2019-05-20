@@ -1,0 +1,6 @@
+<%= form_for @author, url: {action: "update"} do |f| %>
+    <%= f.text_field :fname %>
+    <%= f.text_field :lname %>
+    <%= f.text_field :location %>
+    <%= f.submit "Save" %>
+<% end %>

@@ -1,0 +1,23 @@
+<%= form_for @author, url: {action: "create"} do |f| %>
+    <% if @author.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@author.errors.count, "error") %> prohibited
+        this author from being saved:
+      </h2>
+      <ul>
+        <% @author.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+    <%= f.text_field :fname,  placeholder: "First Name", :required => 'required'%>
+    </p><p>
+    <%= f.text_field :lname, placeholder: "Last Name", :required => 'required'%>
+    </p><p>
+    <%= f.text_field :location, placeholder: "Location" %>
+    </p>
+    <%= f.submit "Save" %>
+<% end %>

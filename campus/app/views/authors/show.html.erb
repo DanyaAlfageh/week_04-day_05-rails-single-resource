@@ -1,0 +1,16 @@
+<p><%= link_to "Back", authors_path %></p>
+<h1>
+<%= @author.fname %>
+</h1>
+<p>
+<%= @author.lname %>
+</p>
+<p>
+<%= @author.location %>
+</p>
+
+<p>
+<%= link_to "Edit", edit_author_path(@author) %>
+<%= link_to "Destroy this author!", author_path(@author), method: :delete,
+data: { confirm: 'Are you sure?' } %>
+</p>
