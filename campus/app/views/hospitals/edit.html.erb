@@ -1,0 +1,6 @@
+<%= form_for @hospital, url: {action: "update"} do |f| %>
+    <%= f.text_field :name %>
+    <%= f.text_field :location %>
+    <%= f.text_field :specialty %>
+    <%= f.submit "Save" %>
+<% end %>

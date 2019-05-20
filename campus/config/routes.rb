@@ -5,6 +5,10 @@ Rails.application.routes.draw do
     resources :books
   end
 
+  resources :hospitals do
+    resources :patients
+  end
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # get "/books", to: "books#index", as: "books" #books_path
   # get "/books/new", to: "books#new", as: "new_book" #new_book_path
@@ -22,13 +26,13 @@ Rails.application.routes.draw do
   #post '/authors', to:"authors#create"
   #patch '/authors/:id', to:"authors#update"
 
-  get "/patients", to: "patients#index", as: "patients" #patients_path
-  get "/patients/new", to: "patients#new", as: "new_patient" #new_patient_path
-  get "/patients/:id", to: "patients#show", as: "patient" #patient_path(patient)
-  get '/patients/:id/edit', to: "patients#edit", as:"edit_patient" #edit_patient_path
-  delete '/patients/:id', to: "patients#destroy" #patient_path(patient)  I am usig same 'patient' route so no need to use as:patient again
-  post '/patients', to:"patients#create"
-  patch '/patients/:id', to:"patients#update"
+  # get "/patients", to: "patients#index", as: "patients" #patients_path
+  # get "/patients/new", to: "patients#new", as: "new_patient" #new_patient_path
+  # get "/patients/:id", to: "patients#show", as: "patient" #patient_path(patient)
+  # get '/patients/:id/edit', to: "patients#edit", as:"edit_patient" #edit_patient_path
+  # delete '/patients/:id', to: "patients#destroy" #patient_path(patient)  I am usig same 'patient' route so no need to use as:patient again
+  # post '/patients', to:"patients#create"
+  # patch '/patients/:id', to:"patients#update"
 
   root 'welcome#index'
 

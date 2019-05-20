@@ -1,0 +1,16 @@
+<p><%= link_to "Back", hospitals_path %></p>
+<h1>
+<%= @hospital.name %>
+</h1>
+<p>
+<%= @hospital.location %>
+</p>
+<p>
+<%= @hospital.specialty %>
+</p>
+
+<p>
+<p> <%= link_to "View Patients", hospital_patients_path(@hospital) %> </p>
+<%= link_to "Edit", edit_hospital_path(@hospital) %>
+<%= link_to "Destroy this hospital!", hospital_path(@hospital), method: :delete %>
+</p>

@@ -1,33 +1,47 @@
 class PatientsController < ApplicationController
     def index
-        @patients = Patient.all
+        @hospital = Hospital.find(params[:hospital_id])
+        @patients = @hospital.patients
     end
-    def show
-        @patient = Patient.find(params[:id])
+
+    def show 
+        @hospital = Hospital.find(params[:hospital_id])
+        @patient = @hospital.patients.find(params[:id])
     end
+
     def destroy
-        @patient = Patient.find(params[:id])
+        @hospital = Hospital.find(params[:hospital_id])
+        @patient = @hospital.patients.find(params[:id])
         @patient.destroy
 
-        redirect_to patients_path
+        redirect_to hospital_patients_path(@hospital)
     end
-    def new
-        @patient = Patient.new
+
+    def new 
+        @hospital = Hospital.find(params[:hospital_id])
+        @patient = @hospital.patients.new
     end
+
     def create
-        @patient = Patient.create(patient_params)
-
-        redirect_to patient_path(@patient)
+        @hospital = Hospital.find(params[:hospital_id])
+        @patient = @hospital.patients.create(patient_params)
+        # redirect_to Patients_path
+        redirect_to hospital_patient_path(@hospital, @patient)
     end
-    def edit
-        @patient = Patient.find(params[:id])
 
+    def edit 
+        @hospital = Hospital.find(params[:hospital_id])
+        @patient = @hospital.patients.find(params[:id])
     end
+
     def update 
-        @patient = Patient.find(params[:id])
+        @hospital = Hospital.find(params[:hospital_id])
+        @patient = @hospital.patients.find(params[:id])
         @patient.update(patient_params)
-        redirect_to patient_path(@patient)
+        # redirect_to Patients_path
+        redirect_to hospital_patient_path(@hospital, @patient)
     end
+
     def patient_params
         params.require(:patient).permit(:first_name, :last_name, :born_on)
     end

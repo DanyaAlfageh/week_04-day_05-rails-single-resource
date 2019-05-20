@@ -1,4 +1,4 @@
-<p><%= link_to "Back", patients_path %></p>
+<p><%= link_to "Back", hospital_patients_path(@hospital) %></p>
 <h1>
 <%= @patient.first_name %>
 </h1>
@@ -10,6 +10,6 @@
 </p>
 
 <p>
-<%= link_to "Edit", edit_patient_path(@patient) %>
-<%= link_to "Destroy this patient!", patient_path(@patient), method: :delete %>
+<%= link_to "Edit", edit_hospital_patient_path(@hospital,@patient) %>
+<%= link_to "Destroy this patient!", hospital_patient_path(@hospital,@patient) , method: :delete %>
 </p>
