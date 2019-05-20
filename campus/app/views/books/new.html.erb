@@ -1,4 +1,6 @@
 <%= form_for @book, url: {action: "create"} do |f| %>
     <%= f.text_field :title %>
+    <%= f.date_field :print_date%>
+    <%= f.text_field :original_language%>
     <%= f.submit "Save" %>
 <% end %>

@@ -8,7 +8,15 @@
 <p>
 <%= @author.location %>
 </p>
-
+<p>
+<%= @author.nickname %>
+</p>
+<p>
+<%= @author.hometown %>
+</p>
+<p>
+<%= @author.age %>
+</p>
 <p>
 <%= link_to "Edit", edit_author_path(@author) %>
 <%= link_to "Destroy this author!", author_path(@author), method: :delete,

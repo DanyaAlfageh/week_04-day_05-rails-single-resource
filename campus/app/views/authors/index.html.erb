@@ -5,7 +5,7 @@
 <% @authors.each do |author| %>
     
     <h3>
-        <%= link_to author.fname+" "+author.lname+", "+author.location, author_path(author) %>
+        <%= link_to author.fname+" , "+author.location, author_path(author) %>
     </h3>
     
 <% end %>

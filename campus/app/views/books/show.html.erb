@@ -2,6 +2,13 @@
 <h1>
 <%= @book.title %>
 </h1>
+<h1>
+<%= @book.print_date %>
+</h1>
+<h1>
+<%= @book.original_language %>
+</h1>
+
 
 <p>
 <%= link_to "Edit", edit_book_path(@book) %>

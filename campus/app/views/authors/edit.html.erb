@@ -1,6 +1,21 @@
 <%= form_for @author, url: {action: "update"} do |f| %>
+    <%= f.label :"First Name"%>
     <%= f.text_field :fname %>
+    <br><br>
+    <%= f.label :"Last Name"%>
     <%= f.text_field :lname %>
+    <br><br>
+    <%= f.label :"Location"%>
     <%= f.text_field :location %>
+    <br><br>
+    <%= f.label :"Nickname"%>
+    <%= f.text_field :nickname %>
+    <br><br>
+    <%= f.label :"Hometown"%>
+    <%= f.text_field :hometown %>
+    <br><br>
+    <%= f.label :"Age"%>
+    <%= f.number_field :age %>
+    <br><br>
     <%= f.submit "Save" %>
 <% end %>

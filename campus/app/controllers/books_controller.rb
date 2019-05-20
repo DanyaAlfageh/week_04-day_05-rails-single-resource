@@ -29,7 +29,7 @@ class BooksController < ApplicationController
         redirect_to book_path(@book)
     end
     def book_params
-        params.require(:book).permit(:title)
+        params.require(:book).permit(:title,:print_date,:original_language)
     end
 
 end

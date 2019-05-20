@@ -13,11 +13,26 @@
     </div>
   <% end %>
   <p>
+    <%= f.label :"First Name"%>
     <%= f.text_field :fname,  placeholder: "First Name", :required => 'required'%>
     </p><p>
+    <%= f.label :"Last Name"%>
     <%= f.text_field :lname, placeholder: "Last Name", :required => 'required'%>
     </p><p>
+    <%= f.label :"Location"%>
     <%= f.text_field :location, placeholder: "Location" %>
+    </p>
+    <p>
+    <%= f.label :"Nickname"%>
+    <%= f.text_field :nickname, placeholder: "Nickname" %>
+    </p>
+    <p>
+    <%= f.label :"Hometown"%>
+    <%= f.text_field :hometown, placeholder: "hometwon" %>
+    </p>
+    <p>
+    <%= f.label :"Age"%>
+    <%= f.number_field :age, placeholder: "age" %>
     </p>
     <%= f.submit "Save" %>
 <% end %>
